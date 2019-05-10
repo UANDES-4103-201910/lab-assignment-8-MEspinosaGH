@@ -5,6 +5,13 @@ html {
 	background-color: #000;
 }
 
+#body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100vh;
+}
+
 #kcontainer {
 	display: flex;
 	flex-direction: column;

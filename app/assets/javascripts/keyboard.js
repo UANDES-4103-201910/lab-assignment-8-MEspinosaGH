@@ -10,19 +10,23 @@ class KeyboardController {
 
 		if (this.key.hasClass("key-space")) {
 			var oldText = $(".text-output").text();
-			$(".text-output").text(oldText + " ")
+			$(".text-output").text(oldText + " ");
 		} else if (this.key.hasClass("key-special") || this.key.hasClass("key-wide")) {
-
-			if (this.value == "Bksp"){
+			if (this.value.includes("Bksp")){
 				oldText = $(".text-output").text();
-				var newText = oldText.substring(0, oldText.length-1);
+				var newText = oldText.substr(0, (oldText.length)-1);
 				$(".text-output").text(newText);
+			}
+
+			if (this.value.includes("Enter")) {
+				oldText = $(".text-output").text();
+				var newText = oldText.substr(0, (oldText.length)-1);
 			}
 			
 
 		} else {
 			var oldText = $(".text-output").text();
-			$(".text-output").text(oldText + this.value)
+			$(".text-output").text(oldText + this.value.trim())
 		}
 	}
 }
